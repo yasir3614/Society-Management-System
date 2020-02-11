@@ -1,0 +1,34 @@
+<% include ../partials/header %>
+
+
+<div>
+<% if(user.foundUser) { %>
+
+<% if(currentUser && currentUser.username == user.foundUser.username){ %>
+<a href="/profile/<%= currentUser._id%>/edit"> Edit profile  </a>
+<% } %>
+
+
+<img class="userImage" src="<%=user.foundUser.photo%> "/>
+</div>
+<div class="panel panel-default">
+
+     <h3>
+     Username: <%=user.foundUser.username%><br>
+     Firstname: <%=user.foundUser.firstname%><br>
+     Lastname: <%=user.foundUser.lastname%><br>
+     Phonenumber: <%=user.foundUser.phonenumber %><br>
+     Batch: <%= user.foundUser.batch%><br>
+     Date Of Birth: <%=user.foundUser.dob %><br>
+     Department: <%=user.foundUser.department %><br>
+     Admin Status: <%=user.foundUser.isAdmin%><br>
+     <% if(user.foundSociety) { %>
+     User Society: <%=  user.foundSociety.name%><br>
+     Treasurer Status: <%=user.foundUser.isTreasurer %>
+     <% } %>
+</div>
+<% } else { %>
+<script>
+window.location = "/";
+</script>
+<% } %>

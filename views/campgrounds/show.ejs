@@ -1,0 +1,71 @@
+<% include ../partials/header %>
+<div class="container">
+<% if(currentUser && currentUser.isAdmin == true && currentUser.username == campground.author.username){ %>
+      <a class="btn btn-lg btn-default" href="/campgrounds/<%=campground._id %>/adminpanel">Go To Admin Panel</a>
+      <% } %>
+
+      <% if(1<0){ %>
+      <a class="btn btn-lg btn-default" href="/campgrounds/<%=campground._id %>/managefunds">Manage Funds</a>
+      <% } %>
+      
+   <div class="row">
+      
+      <div class="col-md-9">
+         <div class="thumbnail">
+            <img class="img-responsive " src="<%=campground.image %>">
+         
+         <div class="caption-full">
+            <h4 class="pull-right">
+            $9.00
+            <h4>
+            <h4><a> <%= campground.name %></a></h4>
+            <p><%= campground.description %></p>
+            <p><em>Society Headed By: <%= campground.author.username%></em></p>
+            
+            <%if (currentUser &&  campground.author.id.equals(currentUser._id )){ %>        
+            <a class="btn btn-xs btn-warning" href="/campgrounds/<%= campground._id%>/edit">Edit</a>            
+            <form class="delete-form" action="/campgrounds/<%= campground._id%>/?_method=DELETE" method="POST">
+               <button class="btn btn-xs btn-danger">Delete</button>
+            </form>
+            <% } %>       
+            
+         </div>
+         </div>
+         <div class="well">
+               <div class="text-right">
+               <% if(currentUser && currentUser.isAdmin == true && currentUser.username == campground.author.username){ %>
+                    <p> <a class="btn btn-success" href="/campgrounds/<%= campground._id%>/comments/new">Add Annoucement</a>
+                    </p > 
+                    <% } %>
+               </div>
+               <hr>
+               <% campground.comments.forEach(function(comment){ %>
+               <div class="row">
+  <div class="col-md-12">
+    <strong><%= comment.author.username%></strong>
+    <span class="pull-right">10 days ago</span>
+    <div>
+     
+      <form class="delete-form" action="/campgrounds/<%=campground._id%>/comments/<%= comment._id%>/?_method=DELETE" method="POST">
+        
+        <%if (currentUser &&  comment.author.id.equals(currentUser._id )){ %>
+         <a id="myImg" href="/campgrounds/<%=campground._id%>/comments/<%= comment._id%>/edit"> <img width="10" height="10" src="https://image.flaticon.com/icons/png/128/59/59399.png"></a>
+        <input width="10" height="10" type="image" src="https://cdn2.iconfinder.com/data/icons/25-free-ui-icons/40/trash_bin-128.png"></input>
+      <% } %>
+      </form>
+      <%= comment.text %>
+    </div>
+  </div>
+</div>
+               
+               <% }); %>
+         </div>
+      </div>
+   </div>
+</div>
+
+    
+     
+     
+    
+     

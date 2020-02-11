@@ -1,0 +1,42 @@
+<!--Profile Edit-->
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div style="width:30%; margin:0 auto;">
+        <h1 style="text-align:center">Edit <%=user.name%></h1>
+        <form action="/profile/<%= currentUser._id%>/?_method=PUT" method="POST">
+            <div class="form-group">
+                <input class="form-control" name = "user[firstname]" type='text' value='<%=user.firstname%>' placeholder="First Name"></input>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name = "user[lastname]" type='text' value='<%=user.lastname%>' placeholder="Last Name"></input>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name = "user[phonenumber]" type='text' value='<%=user.phonenumber%>' placeholder="Phone Number"></input>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name = "user[dob]" type='date' value='<%=user.dob%>' ></input>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name = "user[photo]" type='text' value='<%=user.photo%>' placeholder="Image url"></input>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name = "user[batch]" type='text' value='<%=user.batch%>' placeholder="Batch"></input>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name = "user[department]" type='text' value='<%=user.department%>' placeholder="Department"></input>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name = "user[studentnumber]" type='text' value='<%=user.studentnumber%>' placeholder="Student Number"></input>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-large btn-primary btn-block">Submit</button>
+            </div>
+        </form>
+        <a href="/">Go Back</a>
+        </div>
+       
+    </div>
+</div>
+<% include ../partials/footer %>

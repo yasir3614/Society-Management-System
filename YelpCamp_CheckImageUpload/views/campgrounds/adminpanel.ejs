@@ -1,0 +1,96 @@
+<% include ../partials/header %>
+
+
+<div class="container users shadow" > 
+<h3>Users</h3>
+<table  class="usertable">
+    <tr class="tr_1">
+    <th>First Name</th>
+    <th>Username</th>
+    <th>Faculty Number</th>
+    <th>Student Number</th>
+    <th>Admin Status</th>
+    
+    </tr>
+
+<% parm.users.forEach(function(users){ %>
+    <tr>
+    <td><%=users.firstname%></td>
+    <td><%=users.username%></td>
+    <td><%=users.facultynumber%></td>
+    <td><%=users.studentnumber%></td>
+    <td><%=users.isAdmin%></td>
+    
+    
+    </tr>
+        <% }); %>
+        </table>
+        
+        
+<div class="container users shadow" > 
+<h3>Registered Users In Society</h3>
+<table  class="usertable">
+    <tr class="tr_1">
+    <th>First Name</th>
+    <th>Username</th>
+    <th>Registered In</th>
+    </tr>
+
+<% if(parm.reguser.user.length!=0) { %> 
+     <% parm.reguser.user.forEach(function(users){ %>
+    <tr>
+    <td><%=users.firstname%></td>
+    <td><%=users.username%></td>
+    <td><%= users.society._id %></td>
+    
+    
+    </tr>
+        <% }); %>
+       <% } %>
+        </table> 
+             
+
+       
+      
+       <div style="width:30%; margin:0 auto;">
+       <label>Give Society Adding Privileges</label>
+        <form action="/campgrounds/adminpanel/<%=parm.id %>/grant" method="POST">
+          
+          <div class="form-group">
+          <input class="form-control" name = "username" type='text'placeholder="Enter username from above table" ></input>  
+          </div>
+          <button class="btn btn-lg btn-warning">Grant Adminship</button>
+        </form>
+       
+      <label>Revoke Society Adding Privleges</label>
+      <form action="/campgrounds/adminpanel/<%=parm.id %>/revoke" method="POST">
+          <div class="form-group">
+          <input class="form-control " name = "username" type='text' placeholder="Enter username from above table"></input>  
+          </div>
+          <button  class="btn btn-lg btn-warning">Revoke Adminship</button>
+        </form>
+        
+        <label>Delete A User</label>
+      <form action="/campgrounds/adminpanel/<%=parm.id %>/delete/?_method=DELETE" method="POST">
+          <div class="form-group">
+          <input class="form-control " name = "username" type='text' placeholder="Enter username from above table"></input>  
+          </div>
+          <button  class="btn btn-lg btn-warning">Delete a existing User</button>
+        </form>
+        
+        <form action="/campgrounds/adminpanel/<%=parm.id %>/addusertosociety/" method="POST">
+          <div class="form-group">
+          <input class="form-control " name = "username" type='text' placeholder="Enter username from above table"></input>  
+          </div>
+          <button  class="btn btn-lg btn-warning">Add User To Society</button>
+        </form>
+        
+         <form action="/campgrounds/adminpanel/<%=parm.id %>/addtreasurertosociety/" method="POST">
+          <div class="form-group">
+          <input class="form-control " name = "username" type='text' placeholder="Enter username from above table"></input>  
+          </div>
+          <button  class="btn btn-lg btn-warning">Add Treasurer To Society</button>
+        </form>
+       </div> 
+     </div>
+        

@@ -1,0 +1,11 @@
+<% include ../partials/header %>
+
+
+
+<form action="/campgrounds/managefunds/<%=parm.id %>/addfunds" method="POST">
+          
+          <div class="form-group">
+          <input class="form-control" name = "fundToAdd" type='number'placeholder="Enter Amount Of Fund To Add" ></input>  
+          </div>
+          <button class="btn btn-lg btn-warning">Add Funds</button>
+        </form>

@@ -1,0 +1,243 @@
+ body {
+        font-family: 'Source Sans Pro', sans-serif;
+        background-image:url("https://www.xmple.com/wallpaper/linear-white-gradient-blue-1920x1080-c2-b0c4de-fff5ee-a-60-f-14.svg");
+      }
+      
+.tr_1{
+     background-color: rgba(0, 255, 0, 0.5);
+     
+     }      
+.usertable{
+     background-color: white;
+     }      
+.thumbnail img{
+        width: 99%;
+        
+ }
+
+.thumbnail{
+        padding:5;
+ } 
+ 
+.thumbnail caption-ful{
+       padding:9px;
+ } 
+ 
+.delete-form{
+     display: inline;
+     }
+#myImg{
+    vertical-align: middle;
+    } 
+
+
+.navbar.navbar-inverse {
+  border: none;
+}
+.navbar .navbar-brand {
+  padding-top: 0px;
+}
+.navbar .navbar-brand img {
+  height: 50px;
+  
+}
+
+     
+.users {
+    display: block;
+    padding: 10px;
+    margin-bottom: 50px; /* SIMPLY SET THIS PROPERTY AS MUCH AS YOU WANT. This changes the space below box1 */
+    text-align: justify;
+}
+
+.access {
+    display: block;
+    padding: 10px;
+    text-align: justify;
+    margin-top: 50px; /* OR ADD THIS LINE AND SET YOUR PROPER SPACE as the space above box2 */
+}     
+
+.shadow{
+     -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+      -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+      box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE*/
+     }
+     
+
+     
+     table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+/*
+ * Specific styles of signin component
+ */
+/*
+ * General styles
+ */
+/*body, html {*/
+/*    height: 100%;*/
+/*    background-repeat: no-repeat;*/
+    /*background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+/*}*/
+
+.card-container.card {
+    max-width: 350px;
+    padding: 40px 40px;
+    
+}
+
+.btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/*
+ * Card component
+ */
+.card {
+     
+    background-color: #F7F7F7;
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 4px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/*
+ * Form styles
+ */
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.inputEmail {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+.btn.btn-signin {
+    /*background-color: #4d90fe; */
+    background-color: rgb(104, 145, 162);
+    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: rgb(12, 97, 33);
+}
+
+.userImage{
+     border-radius:50%;
+     border-color:black;
+     }
+
+
+#my_centered_buttons { 
+     /*margin-left:50%;*/
+    
+     display: flex; 
+     justify-content: center; 
+     padding-left: 100px;
+     }
+
+.mynav,.active {
+  font-weight: bold;
+  color: yellow;
+} 
+
+.headerpage{
+     
+     font-family: 'Montserrat', sans-serif;
+     
+     }
+.admin-test{
+     width: 200px;
+     }     
